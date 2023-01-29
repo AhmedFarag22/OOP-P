@@ -1,0 +1,54 @@
+#include<iostream>
+using namespace std;
+
+class polygan {
+protected:
+	int width, height;
+public:
+	void set_values(int a, int b) {
+		width = a;
+		height = b;
+
+	}
+	virtual int area(void) = 0;
+	void printarea(void) {
+		cout << this->area() << endl;
+	}
+};
+
+class rectangle : public polygan {
+public:
+	int area() {
+		return (width * height);
+	}
+};
+
+class triangle : public polygan {
+public:
+	int area() {
+		return (width * height / 2);
+	}
+};
+
+
+void main() {
+
+	rectangle rect;
+	triangle trgl;
+	polygan pol;//this is aì abstract class we can not define an object from it   
+	polygan* p1 = &rect;
+	polygan* p2 = &trgl;
+	p1->set_values(4, 5);
+	p2->set_values(4, 5);
+	p1->printarea();
+	p2->printarea();
+	polygan* p[2] = { &rect, &trgl };
+	for (int i = 0; i < 2; i++)
+	{
+		p[i]->area();
+		p[i]->printarea();
+	}
+
+
+
+}
