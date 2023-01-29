@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+
+template<class t>
+class number {
+	t first, second;
+public:
+	number(t a, t b) {
+		first = a;
+		second = b;
+	}
+	 t max();
+};
+
+template<class t>
+t number<t>::max() {
+	return (first > second ? first : second);
+}
+
+int main() {
+	number<double>ob(10.5, 20.5);
+	cout << ob.max() << endl;
+
+}
