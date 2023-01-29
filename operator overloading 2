@@ -1,0 +1,46 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+
+class triangle
+{
+
+private:
+	float width, height;
+
+public:
+	triangle(float a = 0, float b = 0) {
+		width = a;
+		height = b;
+	}
+
+	void getdata() {
+		cout << "enter width \n";
+		cin >> width;
+		cout << "enter height \n";
+		cin >> height;
+	}
+
+	void showdata() {
+		cout << "width and height = " << width << ", " << height << ", " << "\n";
+	}
+
+
+	triangle add( triangle c2) {
+		triangle c3;
+		c3.width = width + c2.width;
+		c3.height = height + c2.height;
+		return c3;
+	}
+
+};
+
+
+
+int main() {
+	triangle c1, c2(3.5, 1.5), c3;
+	c1.getdata();
+	c3=c1.add(c2);
+	c3.showdata();
+}
