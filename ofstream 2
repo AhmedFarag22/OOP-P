@@ -1,0 +1,14 @@
+#include<iostream>
+#include<fstream>
+using namespace std;
+
+int main() {
+	ofstream ahmed2("a.text 2");
+	cout << "enter the student status \n";
+	cout << "press ctrl+z to exit\n";
+	char name[10];
+	int id;
+	while (cin >> name >> id) {
+		ahmed2 << name << "  " << id;
+	}
+}
