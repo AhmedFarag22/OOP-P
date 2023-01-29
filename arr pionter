@@ -1,0 +1,29 @@
+#include<iostream>
+#include<cmath>
+#include<algorithm>
+using namespace std;
+
+
+
+int main() {
+
+	int arr[5] = { 55,77,332,78,34 };
+	sort(arr, arr + 5);
+	for (size_t i = 0; i < 5; i++)
+	{
+		cout<<*(arr + i);
+		cout << endl;
+	}
+	cout << endl << endl;
+	
+	for (size_t i = 0; i < 5; i++)
+	{
+		cout << arr + i;
+		cout << endl;
+	}
+	char g[] = "1500";
+	atoi(g);//from string to integer
+	atof();//from string to float
+	atol();//from string to long
+	atoll();//from string to long long
+}
