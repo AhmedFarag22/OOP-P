@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+class cpolygan {
+protected:
+	int width, height;
+public:
+	void set_values(int a, int b) {
+		width = a;
+		height = b;
+	}
+	virtual int area(void) {//virtual ãæÌæÏå ÚáÔÇä äÞæá Çä Ýí ÏÇáå ÊÇäíå ãæÏÏå Ýí ÇáÇÈäÇÁ ÇÓÊÎÏãåÇ æ ãÊÓÊÎÏãÔ Ïí ÇÍäÇ ßÇÊÈäåÇ ÚáÔÇä ãíÍÕáÔ ÇíÑæÑ
+		return (0);
+	}
+	
+};
+
+class crectangle : public cpolygan {
+public:
+	int area(void) {
+		return (width * height);
+	}
+};
+
+class ctriangle : public cpolygan {
+	int area(void) {
+		return (width * height / 2);
+	}
+};
+
+int main() {
+	crectangle rect;
+	ctriangle trgl;
+	cpolygan poly;
+	cpolygan* p1, * p2, * p3;
+	p1 = &rect;
+	p2 = &trgl;
+	p3 = &poly;
+	p1->set_values(4, 5);
+	p2->set_values(4, 5);
+	p3->set_values(4, 5);
+	cout << p1->area()<<endl;//with pointer function area must found in parent class and son class
+	cout << p2->area()<<endl;
+	cout << p3->area()<<endl;
+
+}
