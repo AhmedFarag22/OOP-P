@@ -1,0 +1,44 @@
+#include<iostream>
+using namespace std;
+
+class triangle
+{
+
+private:
+	float width, height;
+public:
+	triangle(float a = 0, float b = 0) {
+		width = a;
+		height = b;
+	}
+
+	void gatedata() {
+		cout << "enter width \n";
+		cin >>width;
+		
+		cout << "enter height \n";
+		cin >> height;
+	}
+	void showdata() {
+		cout << "width and height"<<width<<"  "<<height;
+	}
+
+	triangle operator+(triangle b) {
+		width + b.width;
+		height + b.height;
+		return *this;
+	}
+	friend  ostream&operator<<(ostream& output, triangle b) {
+		output << "h= " << b.height << " w = " << b.width;
+		return output;
+	}
+};
+
+int main() {
+
+	triangle c1, c2(3.5, 1.5), c3;
+	c1.gatedata();
+	c3 = c1 + c2;
+	cout <<c3;
+
+}
