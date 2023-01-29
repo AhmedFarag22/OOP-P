@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+
+class student {
+
+	int id;
+public:
+	void set_id(int id) {
+		this->id = id;
+	}
+
+	void print_id() {
+		cout << "id is" << id << endl;
+	}
+};
+
+int main() {
+	student st;
+	st.set_id(10);
+	st.print_id();
+}
