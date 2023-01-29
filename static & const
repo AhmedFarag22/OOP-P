@@ -1,0 +1,18 @@
+#include<iostream>
+using namespace std;
+
+void f()  {
+	const int pi = 3.14;
+	//pi++;
+	static int x = 1;
+	x++;
+		cout << x<<endl;
+}
+
+
+int main() {
+
+	f();
+	f();
+	f(); f();
+}
