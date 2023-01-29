@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+
+class crectangle
+{
+private:
+
+	int width, height;
+	
+	friend crectangle duplicate(crectangle);
+public:
+	 void set_values(int, int);
+	int area()
+	{
+		return (width * height);
+	}
+
+
+};
+
+void crectangle::set_values(int a, int b) {
+	width = a;
+	height = b;
+}
+
+ crectangle duplicate(crectangle r) {
+	crectangle t;
+
+	t.width = r.width * 2;
+	t.height = r.height * 2;
+	return t;
+}
+
+
+
+int main() {
+
+	crectangle rect, rectb;
+	rect.set_values(2, 3);
+	cout << "the area before dublicate = " << rect.area() << endl;
+	rectb = duplicate(rect);
+	cout << "the area after dublicate = " << rectb.area() << endl;  
+
+
+}
