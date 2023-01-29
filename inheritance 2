@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+class mother {
+public:
+	mother(int a) {
+		cout << "mother = " << a << endl;
+	}
+};
+
+class son : public mother {
+
+public:
+	son(int a):mother(a) {
+		cout << "son = " << a << endl;
+	}
+};
+int main() {
+	son sara(4);
+
+}
