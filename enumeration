@@ -1,0 +1,14 @@
+#include<iostream>
+using namespace std;
+
+enum days{sat , sun, mon, tue, wed, thur, fri};
+
+int main() {
+
+	string d[7] = { "sat", "sun", "mon", "tue", "wed", "thur", "fri" };
+ 	days m[7] = { sat,sun, mon, tue, wed, thur, fri };
+	for (size_t i = 0; i < 7; i++)
+	{
+		cout << m[i] << "  " << d[i]<<"  ";
+	}
+}
