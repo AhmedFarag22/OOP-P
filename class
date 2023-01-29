@@ -1,0 +1,33 @@
+#include<iostream>
+#include<cstring>
+
+using namespace std;
+
+class car {
+
+
+private:
+   
+	char name[10];
+
+
+
+public:
+	 void setname(char n[]) {
+
+		strcpy_s(name, n);
+	}
+
+	char* getname() {
+		return name;
+	}
+	
+};
+
+int main() {
+	char c[] = "red";
+	car x;
+	x.setname(c);
+	cout << x.getname();
+
+}
