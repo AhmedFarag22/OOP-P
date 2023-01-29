@@ -1,0 +1,22 @@
+include<iostream>
+using namespace std;
+template<class t>
+class a_char {
+public:
+	a_char(t x) {
+		cout << "is not"<<endl;
+	}
+};
+template<>
+class a_char<char> {
+public:
+	a_char(char x) {
+		cout << "is" << endl;
+	}
+};
+
+int main() {
+	a_char<int>ob1(7);
+	a_char<double>ob2(55.5);
+	a_char<char>ob3('a');
+}
