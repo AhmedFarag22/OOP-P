@@ -1,0 +1,52 @@
+#include<iostream>
+using namespace std;
+class mat;
+class math {
+	
+private:
+
+
+public:
+	math(int i) {
+		v = i;
+	}
+	int v = 0;
+	friend int bub(math o, mat f);
+
+};
+class math;
+class mat {
+	int h = 0;
+
+private:
+
+
+
+public:
+	mat(int j) {
+		h = j;
+	}
+
+	friend int bub(math o, mat f);
+
+};
+int bub(math o, mat f) {
+	return  o.v + f.h;
+}
+
+int main() {
+	math m(30);
+	mat n(10);
+	
+cout<< bub(m,n);
+
+
+
+
+
+
+
+
+
+
+}
