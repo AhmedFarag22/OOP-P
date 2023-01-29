@@ -1,0 +1,53 @@
+#include<iostream>
+using namespace std;
+
+class cpolygon {
+private:
+	int x = 0;
+protected:
+	int width, height,y;
+public:
+	
+	void set_value(int a, int b) {
+		width = a; height = b;
+	}
+};
+
+class crectangle : public cpolygon {
+public:
+	int area() {
+		return (width * height);
+	};
+
+};
+class ctriangle :public cpolygon {
+public:
+	int area() {
+		return ((width * height) / 2);
+	}
+};
+
+class c : private cpolygon {//private ÈÞí Ýí Çá  public íÚäí ßá Çáí Ýí 
+private:
+	
+public:
+	
+	int area() {
+		return ((width * height) / 2);
+	}
+	cpolygon::width;
+	
+};
+
+int main() {
+	crectangle rect;
+	ctriangle trgl;
+	c b;
+	b.width = 8;
+	
+	rect.set_value(4, 5);
+	trgl.set_value(3, 5);
+	rect.area();
+	trgl.area();
+
+}
