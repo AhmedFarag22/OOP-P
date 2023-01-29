@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+
+class stud {
+
+public:
+	void address() {
+		cout << this;
+	}
+
+};
+
+int main() {
+
+	stud a, b, c;
+	cout << "the address of a\t";
+	a.address();
+	cout << endl << "the address of b\t";
+	b.address();
+	cout <<endl<< "the address of c\t";
+	c.address();
+	cout << "\n";
+
+
+}
