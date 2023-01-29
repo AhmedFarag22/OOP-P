@@ -1,0 +1,92 @@
+#include<iostream>
+using namespace std;
+
+
+class unary {
+
+	int x, y, feet, inches, num=0;
+
+public:
+
+	unary(int i = 0, int j = 0) {
+		x = i; y = j;
+	}
+	void show() { cout << x << "  " << y << endl; }
+	unary operator++() {
+		x++;
+		y++;
+		return *this;
+	}
+	unary operator++(int) {
+		unary t;
+		t = *this;
+		x++;
+		y++;
+		return t;
+	}
+	unary operator-() {
+		x = -x;
+		y = -y;
+		return *this;
+	}
+	unary operator+=(unary b2) {
+		x += b2.x;
+		y += b2.y;
+		return *this;
+	}
+	unary operator + (int n) {
+		unary c3;
+		c3.x = x + n;
+		c3.y = y + n;
+		return c3;
+	}
+	friend unary operator+( int n, unary c1);//   íÈÞí ÛáØ unary  æint áæ ÈÏáäÇ Èíä Çá 
+	friend istream& operator>>(istream& input, unary& d);
+	friend ostream& operator<<(ostream& output, unary& d) {
+		output << "f =  " << d.feet << "  " << "d =  " << d.inches << endl;
+		return output;
+	}
+	operator int() {// variabele  Ýí ob ÚáÔÇä äÍØ  
+		return int(num);
+	}
+};
+
+unary operator+( int n, unary c1) {
+	unary c3;
+	c3.x = c1.x + n;
+	c3.y = c1.y + n;
+	return c3;
+}
+
+istream& operator>>(istream& input, unary& d) {
+	input >> d.feet >> d.inches;
+	return input;
+}
+
+int main() {
+
+	unary v(10, 20),k, c(1,2), b(1,2), b2(3,3),n, c3, d3,ob ;
+	-b;
+	int x = 10;
+	v++;
+	k = v++;
+	k.show();
+	v.show();
+	c.show();
+	b += b2;
+	b.show();
+	c3 = c + 10;
+	c3.show();
+	x = ob;
+	cin >> d3;
+	cout << d3;
+	cout << d3;
+	cout << x;
+	
+
+}
+
+
+
+
+
